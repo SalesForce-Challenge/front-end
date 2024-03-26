@@ -1,0 +1,27 @@
+.wrapperHeader{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100vw;
+
+   height: 100px;
+}
+.WrapperLogoImg{
+   padding: 0.5rem;
+}
+
+.logoImg{
+   width: 100px;
+}
+
+.navegation {
+   width: 100%;
+}
+
+.wrapperListLink{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 1rem;
+}

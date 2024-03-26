@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import classes from './navegation.module.css'
 interface NavegationProps {
    children: React.ReactNode;
    href: string;
@@ -7,13 +7,9 @@ interface NavegationProps {
 
 const Navegation: React.FC<NavegationProps> = ({ children, href }) => {
    return (
-      <nav>
-         <ul>
-            <li>
-               <Link href={href}>{children}</Link>
+            <li className={classes.listLink}>
+               <Link className={classes.link} href={href}>{children}</Link>
             </li>
-         </ul>
-      </nav>
    );
 }
 

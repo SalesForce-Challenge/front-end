@@ -4,7 +4,7 @@ import Link from 'next/link'
 import logoImg from '../../assets/icon/logo_desk.svg'
 import Navegation from './navegation'
 
-
+import classes from './main-header.module.css'
 
 const MainHeader = () => {
    const navigationItems = [
@@ -19,16 +19,20 @@ const MainHeader = () => {
 
    return (
       <>
-         <header>
-            <Link href={"/"}>
-               <Image src={logoImg} alt='Nuvem azul escrito salesforce'/>
+         <header className={classes.wrapperHeader}>
+            <Link href={"/"} className={classes.WrapperLogoImg}>
+               <Image src={logoImg} alt='Nuvem azul escrito salesforce' className={classes.logoImg}/>
             </Link>
 
-            {navigationItems.map((item, index) => (
-               <Navegation key={index} href={item.href}>
-                     {item.nome}
-               </Navegation>
-            ))}
+            <nav className={classes.navegation}>
+               <ul className={classes.wrapperListLink} >
+                  {navigationItems.map((item, index) => (
+                     <Navegation key={index} href={item.href}>
+                           {item.nome}
+                     </Navegation>
+                  ))}
+               </ul>
+            </nav>
          </header>
       </>
    );
