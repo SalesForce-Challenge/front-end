@@ -5,6 +5,7 @@ import logoImg from '../../assets/icon/logo_desk.svg'
 import Navegation from './navegation'
 
 import classes from './main-header.module.css'
+import SearchBar from './searchbar'
 
 const MainHeader = () => {
    const navigationItems = [
@@ -33,6 +34,7 @@ const MainHeader = () => {
                   ))}
                </ul>
             </nav>
+            <SearchBar />
          </header>
       </>
    );

@@ -1,0 +1,26 @@
+.searchWrapper {
+    position: relative;
+}
+
+.searchBar{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+
+    border-radius: 1rem;
+    border: 2px solid var(--medium--blue, var(--blue));
+
+    padding: 0.5rem 1rem;
+
+}
+
+.searchBar::placeholder {
+    color: var(--blue);
+}
+
+.lupaIcon {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+}

@@ -1,10 +1,12 @@
 .wrapperHeader{
    display: flex;
    align-items: center;
-   justify-content: center;
-   width: 100vw;
-
+   justify-content: space-between;
+   
+   width: 95vw;
    height: 100px;
+
+   margin: 0 auto;
 }
 .WrapperLogoImg{
    padding: 0.5rem;
