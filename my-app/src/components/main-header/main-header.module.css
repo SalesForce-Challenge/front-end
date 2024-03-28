@@ -20,6 +20,12 @@
    width: 100%;
 }
 
+.loginWrapper{
+   display: flex;
+   align-items: center;
+   flex-wrap: nowrap;
+}
+
 .wrapperListLink{
    display: flex;
    justify-content: space-around;

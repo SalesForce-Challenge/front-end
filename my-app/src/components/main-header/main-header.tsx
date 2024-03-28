@@ -2,10 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import logoImg from '../../assets/icon/logo_desk.svg'
-import Navegation from './navegation'
+import homeImg from '../../assets/icon/home-blue_desk.svg'
+import loginImg from '../../assets/icon/login-blue-desk.svg'
 
+import Navegation from './navegation'
 import classes from './main-header.module.css'
 import SearchBar from './searchbar'
+
+
 
 const MainHeader = () => {
    const navigationItems = [
@@ -29,7 +33,16 @@ const MainHeader = () => {
                <ul className={classes.wrapperListLink} >
                   {navigationItems.map((item, index) => (
                      <Navegation key={index} href={item.href}>
-                           {item.nome}
+                        {item.nome === 'inicio' ? (
+                           <Image src={homeImg} alt='Inicio' className={classes.navigationImage} />
+                        ) : item.nome === 'login' ? (
+                           <span className={classes.loginWrapper}>
+                              <Image src={loginImg} alt='Login' className={classes.navigationImage} />
+                              <p>{item.nome}</p>
+                           </span>
+                        ) : (
+                           <span>{item.nome}</span>
+                        )}
                      </Navegation>
                   ))}
                </ul>
