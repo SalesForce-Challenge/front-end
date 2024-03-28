@@ -1,4 +1,4 @@
-import MainContent from '@/components/main-content';
+import MainContent from '@/components/main-content/main-content';
 import MainHeader from '@/components/main-header/main-header'
 
 

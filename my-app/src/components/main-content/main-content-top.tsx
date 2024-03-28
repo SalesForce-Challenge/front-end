@@ -1,13 +1,12 @@
-
+import React from 'react';
 import Image from 'next/image';
 import Eistein360Img from '../../assets/illustrations/einstein-mulher-360_desktop.svg'
-import ButtonSelect from '../buttons/button-select';
+import classes from './main-content-top.module.css';
 
-import classes from './main-content.module.css';
+const MainContentTop: React.FC = () => {
+    // Your code here
 
-const MainContent = () => {
     return (
-        <main className={classes.main}>
             <section className={classes.sectionTopHero}>
                 <div>
                     <div className={classes.wrapperTitle}>
@@ -28,8 +27,7 @@ const MainContent = () => {
                     <Image src={Eistein360Img} alt="Image" />
                 </div>
             </section>
-        </main>
     );
 };
 
-export default MainContent;
+export default MainContentTop;
