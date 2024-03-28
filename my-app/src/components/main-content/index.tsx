@@ -18,8 +18,9 @@ const MainContent = () => {
                         <p>O Customer 360 é a nossa coleção de produtos e serviços projetada para auxiliar 98% dos clientes a atingir ou superar suas metas de retorno sobre investimento (ROI).</p>
                     </div>
                     
-                    <div>
-                        <ButtonSelect>Testar gratis</ButtonSelect>
+                    <div className={classes.wrapperButton}>
+                        <button  className={classes.buttonSelected }>Testar gratis</button>
+                        <button  className={classes.buttonOutline }>Saber mais</button>
                     </div>
                 </div>
 
