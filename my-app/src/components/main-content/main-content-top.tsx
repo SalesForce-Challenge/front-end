@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
+import Image from 'next/image'
+import React from 'react'
 import Eistein360Img from '../../assets/illustrations/einstein-mulher-360_desktop.svg'
-import classes from './main-content-top.module.css';
+import classes from './main-content-top.module.css'
 
 const MainContentTop: React.FC = () => {
     // Your code here
@@ -10,10 +10,11 @@ const MainContentTop: React.FC = () => {
             <section className={classes.sectionTopHero}>
                 <div>
                     <div className={classes.wrapperTitle}>
-                        <h1>Alcance o sucesso facilmente com a ajuda do <span>Salesforce Customer 360.</span></h1>
+                        <h1>Alcance o sucesso facilmente com a ajuda do</h1>
+                        <h1><span>Salesforce Customer 360.</span></h1>
                     </div>
 
-                    <div>
+                    <div className={classes.wrapperParagraph}>
                         <p>O Customer 360 é a nossa coleção de produtos e serviços projetada para auxiliar 98% dos clientes a atingir ou superar suas metas de retorno sobre investimento (ROI).</p>
                     </div>
                     

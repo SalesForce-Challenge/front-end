@@ -26,6 +26,10 @@
     font-weight: 800;
 }
 
+.wrapperParagraph{
+    width: 50%;
+}
+
 .wrapperButton{
     display: flex;
     flex-direction: row;

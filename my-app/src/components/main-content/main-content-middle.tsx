@@ -1,18 +1,18 @@
-import React from 'react';
-import classes from './main-content-middle.module.css';
-import Image from 'next/image';
+import Image from 'next/image'
+import ellipseDecoration from "../../assets/decoration/Ellipse 1.png"
 import csImg from '../../assets/illustrations/customer success.svg'
+import classes from './main-content-middle.module.css'
 
 const MainContentMiddle = () => {
     return (
         <section className={classes.sectionWrapper}>
-            <div>
+            <div className={classes.sectionTitleWrapper}>
                 <h1 className={classes.title}>Todo tipo de conteúdo.</h1>
-                <h2 >Tudo para te ajudar a crescer.</h2>
+                <h2 className={classes.subTitle}>Tudo para te ajudar a crescer.</h2>
             </div>
 
             <div className={classes.contentWrapper}>
-                    <Image src={csImg} alt="Image" />
+                    <Image src={csImg} alt="Customer Success"  aria-hidden="true"/>
 
                 <div className={classes.contentWrapperText}>
                     <div>

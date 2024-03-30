@@ -12,3 +12,10 @@
 .bosqueImg {
     width: 100vw;
 }
+
+.mainContentWrapper{
+    display: flex;
+    gap: 5rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
