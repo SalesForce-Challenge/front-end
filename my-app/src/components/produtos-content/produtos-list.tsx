@@ -15,14 +15,15 @@ const ProtudosLista = () => {
       }, [])
    
       interface Product {
+         id : number
          name: string;
          src: string;
       }
 
       return (
          <section>
-            {data.map((item: Product, index: number) => (
-               <div key={index}>
+            {data.map((item: Product) => (
+               <div key={item.id}>
                   <h2>{item.name}</h2>
                   <div>
                      <Image src={item.src} alt={item.name} 
