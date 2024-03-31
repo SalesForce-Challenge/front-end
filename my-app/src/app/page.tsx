@@ -1,4 +1,5 @@
-import MainContent from '@/components/main-content/main-content';
+import Footer from '@/components/footer/footer'
+import MainContent from '@/components/main-content/main-content'
 import MainHeader from '@/components/main-header/main-header'
 
 
@@ -7,6 +8,7 @@ export default function Home() {
     <>
       <MainHeader />
       <MainContent />
+      <Footer />
     </>
   );
 }
