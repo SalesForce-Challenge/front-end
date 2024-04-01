@@ -1,6 +1,13 @@
 'use client'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+
+interface Product {
+   id : number
+   name: string;
+   src: string;
+}
+
 const ProtudosLista = () => {
    const [data, setData] = useState([]);
 
@@ -14,14 +21,9 @@ const ProtudosLista = () => {
          fetchData()
       }, [])
    
-      interface Product {
-         id : number
-         name: string;
-         src: string;
-      }
 
       return (
-         <section>
+         <div>
             {data.map((item: Product) => (
                <div key={item.id}>
                   <h2>{item.name}</h2>
@@ -34,7 +36,7 @@ const ProtudosLista = () => {
                   </div>
                </div>
             ))}
-         </section>
+         </div>
       )
    };
    
