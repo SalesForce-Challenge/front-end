@@ -1,0 +1,17 @@
+.sectionWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    width: 90vw;
+    margin: 5rem auto;
+}
+
+.sectionWrapperTitle{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-blue, #032D60);
+    text-align: center;
+}
