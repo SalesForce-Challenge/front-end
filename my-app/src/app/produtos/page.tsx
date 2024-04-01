@@ -25,6 +25,7 @@ const Produtos: React.FC = () => {
                <p className={classes.dicaStrong}>Dica Valiosa:</p>
                <p>Esses aplicativos incríveis se complementam ainda mais quando usados juntos.</p>
             </div>
+            <button className={classes.btn}>Encontre a sua solução</button>
             <ProtudosLista/>
          </section>
          <Footer/>
