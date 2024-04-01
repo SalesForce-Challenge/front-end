@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import classes from './produtos-list.module.css'
 
 interface Product {
    id : number
@@ -23,10 +24,9 @@ const ProtudosLista = () => {
    
 
       return (
-         <div>
+         <ul className={classes.listWrapper}>
             {data.map((item: Product) => (
-               <div key={item.id}>
-                  <h2>{item.name}</h2>
+               <li key={item.id}>
                   <div>
                      <Image src={item.src} alt={item.name} 
                      priority
@@ -34,9 +34,11 @@ const ProtudosLista = () => {
                      height={100}
                      />
                   </div>
-               </div>
+
+                  <p>{item.name}</p>
+               </li>
             ))}
-         </div>
+         </ul>
       )
    };
    

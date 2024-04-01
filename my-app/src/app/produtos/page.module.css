@@ -1,0 +1,23 @@
+.sectionWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    width: 90vw;
+    text-align: center;
+    margin: 5rem auto;
+}
+
+
+.sectionTitleWrapper > h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-blue, #032D60);
+}
+
+.dicaStrong{
+    font-weight: 700;
+    color: var(--dark-blue, #032D60);
+}
