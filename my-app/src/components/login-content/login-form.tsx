@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import logo from '../../assets/icon/logo_desk.svg'
 import classes from './login-form.module.css'
+
 const LoginForm: React.FC = () => {
    return (
       <section className={classes.sectionFromWrapper}> 

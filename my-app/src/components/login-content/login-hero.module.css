@@ -2,44 +2,58 @@
    display: flex;
    flex-direction: column;
    justify-content: center;
-
    width: 50rem;
-
    gap: 1rem;
-
 }
-.sectionTitleWrapper >h1{
+
+.sectionTitleWrapper > h1 {
    color: var(--blue);
    font-size: 2.5rem;
 }
-.sectionTitleWrapper >h2{
+
+.sectionTitleWrapper > h2 {
    color: var(--light-blue);
    font-size: 3.5rem;
 }
 
-.sectionWrapper > p{
+.sectionWrapper > p {
    color: #FFFFFF;
 }
 
-.buttonSelected{
+.buttonSelected {
    text-transform: uppercase;
    font-family: 'Roboto', sans-serif;
-   
    padding: .5rem 1rem;
    max-width: 500px;
    width: 100%;
    margin: 1rem 0;
-   
    border-radius: 5px;
-   
    background-color: var(--blue);
    border: none;
-   
 }
 
-.buttonSelected >a {
+.buttonSelected > a {
    font-weight: 700;
    font-size: 1rem;
    color: white;
+}
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+   .sectionWrapper {
+      width: 100%;
+   }
+
+   
+   .sectionTitleWrapper > h1 {
+      font-size: 1rem;
+   }
+   
+   .sectionTitleWrapper > h2 {
+      font-size: 1.5rem;
+   }
+   
+   .buttonSelected {
+      max-width: none;
+   }
 }
