@@ -41,12 +41,11 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
     .sectionWrapper {
-        width: 80vw;
         margin: 3rem auto;
     }
 
     .btn {
-        width: 200px;
+        width: 100%;
     }
 }
 
