@@ -4,14 +4,15 @@ import Eistein360Img from '../../assets/illustrations/einstein-mulher-360_deskto
 import classes from './main-content-top.module.css'
 
 const MainContentTop: React.FC = () => {
-    // Your code here
 
     return (
             <section className={classes.sectionTopHero}>
                 <div>
                     <div className={classes.wrapperTitle}>
                         <h1>Alcance o sucesso facilmente com a ajuda do</h1>
-                        <h1><span>Salesforce Customer 360.</span></h1>
+                        <h1>
+                            <span>Salesforce Customer 360.</span>
+                        </h1>
                     </div>
 
                     <div className={classes.wrapperParagraph}>

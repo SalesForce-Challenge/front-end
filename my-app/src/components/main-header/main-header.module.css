@@ -1,18 +1,17 @@
-.wrapperHeader{
+.wrapperHeader {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   
    width: 95vw;
    height: 100px;
-
    margin: 0 auto;
 }
-.WrapperLogoImg{
+
+.WrapperLogoImg {
    padding: 0.5rem;
 }
 
-.logoImg{
+.logoImg {
    width: 100px;
 }
 
@@ -20,16 +19,37 @@
    width: 100%;
 }
 
-.loginWrapper{
+.loginWrapper {
    display: flex;
    align-items: center;
    flex-wrap: nowrap;
 }
 
-.wrapperListLink{
+.wrapperListLink {
    display: flex;
    justify-content: space-around;
    align-items: center;
    flex-wrap: wrap;
    gap: 1rem;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+   .wrapperHeader {
+      flex-direction: column;
+      height: auto;
+   }
+
+   .WrapperLogoImg {
+      margin-bottom: 1rem;
+   }
+
+   .navegation {
+      margin-bottom: 1rem;
+   }
+
+   .wrapperListLink {
+      flex-direction: column;
+      gap: 0.5rem;
+   }
 }

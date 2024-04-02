@@ -12,8 +12,8 @@
 
 .logoWrapper{
    text-align: center;
-
 }
+
 .logoWrapper > img {
    width: 200px;
 }
@@ -31,4 +31,28 @@
 
 .collumWrapper > h4 {
    font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+   .footerWrapper {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+
+   .logoWrapper {
+      margin-bottom: 1rem;
+   }
+
+   .footerLinksWrapper {
+      flex-direction: column;
+   }
+
+   .collumWrapper, .collumItemWrapper {
+      gap: 0.5rem;
+   }
+
+   .collumWrapper > h4 {
+      font-size: 0.8rem;
+   }
 }

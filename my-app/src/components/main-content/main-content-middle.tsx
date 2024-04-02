@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import ellipseDecoration from "../../assets/decoration/Ellipse 1.png"
 import csImg from '../../assets/illustrations/customer success.svg'
 import classes from './main-content-middle.module.css'
 
