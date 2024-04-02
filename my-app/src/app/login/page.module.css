@@ -1,0 +1,11 @@
+.mainWrapper{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   height: 100vh;
+   padding: 2rem;
+   gap: 2rem;
+
+   background-color: var(--dark-blue);
+}
