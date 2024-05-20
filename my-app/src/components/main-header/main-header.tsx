@@ -1,11 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import logoImg from '../../assets/icon/logo_desk.svg'
 import homeImg from '../../assets/icon/home-blue_desk.svg'
 import loginImg from '../../assets/icon/login-blue-desk.svg'
+import logoImg from '../../assets/icon/logo_desk.svg'
 
-import Navegation from './navegation'
 import classes from './main-header.module.css'
 import SearchBar from './searchbar'
 
@@ -20,37 +19,38 @@ const MainHeader = () => {
       { nome: "indústrias", href: "/industrias" },
       { nome: "suporte", href: "/suporte" },
       { nome: "login", href: "/login" }
-   ];
+   ]
 
    return (
-      <>
-         <header className={classes.wrapperHeader}>
-            <Link href={"/"} className={classes.WrapperLogoImg}>
-               <Image src={logoImg} alt='Nuvem azul escrito salesforce' className={classes.logoImg}/>
-            </Link>
+      <header className={ classes.wrapperHeader } aria-label="Site header">
+         <Link href="/" className={ classes.wrapperLogoImg } aria-label="Salesforce home" tabIndex={ 0 }>
+            <Image src={ logoImg } alt="Salesforce logo" className={ classes.logoImg } />
+         </Link>
 
-            <nav className={classes.navegation}>
-               <ul className={classes.wrapperListLink} >
-                  {navigationItems.map((item, index) => (
-                     <Navegation key={index} href={item.href}>
-                        {item.nome === 'inicio' ? (
-                           <Image src={homeImg} alt='Inicio' className={classes.navigationImage} />
-                        ) : item.nome === 'login' ? (
-                           <span className={classes.loginWrapper}>
-                              <Image src={loginImg} alt='Login' className={classes.navigationImage} />
-                              <p>{item.nome}</p>
-                           </span>
-                        ) : (
-                           <span>{item.nome}</span>
-                        )}
-                     </Navegation>
-                  ))}
-               </ul>
-            </nav>
-            <SearchBar />
-         </header>
-      </>
-   );
+         <nav className={ classes.navegation } aria-label="Main navigation">
+            <ul className={ classes.wrapperListLink }>
+               { navigationItems.map((item, index) => (
+                  <li key={ index } className={ classes.navigationItem }>
+                     { item.nome === 'inicio' ? (
+                        <Link href="/" className={ classes.navigationImageLink } aria-label="Página inicial do site">
+                           <Image src={ homeImg } alt="Página inicial do site" className={ classes.navigationImage } />
+                        </Link>
+                     ) : item.nome === 'login' ? (
+                        <Link href={ item.href } className={ classes.navigationTextLink } aria-label="Link para a página de login">
+                           <Image src={ loginImg } alt="Login" className={ classes.navigationImage } />
+                        </Link>
+                     ) : (
+                        <Link href={ item.href } className={ classes.navigationTextLink }>
+                           { item.nome }
+                        </Link>
+                     ) }
+                  </li>
+               )) }
+            </ul>
+         </nav>
+         <SearchBar />
+      </header>
+   )
 }
 
-export default MainHeader;
+export default MainHeader
