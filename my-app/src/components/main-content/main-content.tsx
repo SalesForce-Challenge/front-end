@@ -10,16 +10,16 @@ import classes from './main-content.module.css'
 
 const MainContent = () => {
     return (
-        <main className={classes.main}>
+        <main className={ classes.main } aria-label="Main content area">
             <MainContentTop />
-            <Image src={bosqueImg} alt='' className={classes.bosqueImg}/>
-            <div className={classes.mainContentWrapper}>
+            <Image src={ bosqueImg } alt='Background illustration of a forest' className={ classes.bosqueImg } />
+            <div className={ classes.mainContentWrapper }>
                 <MainContentMiddle />
                 <MainContentDuvidas />
                 <MainContentEquipe />
             </div>
         </main>
-    );
-};
+    )
+}
 
-export default MainContent;
+export default MainContent

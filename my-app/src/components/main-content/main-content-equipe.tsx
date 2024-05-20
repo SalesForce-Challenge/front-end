@@ -9,44 +9,48 @@ const MainContentEquipe = () => {
 
    const equipe = [
       {
-         img: MarianaImg, 
-         nome: 'Mariana', 
+         img: MarianaImg,
+         nome: 'Mariana',
          rm: 'RM553476',
          link: ''
       },
       {
-         img: ScottiImg, 
+         img: ScottiImg,
          nome: 'Matheus Scotti',
          rm: 'RM553073',
          link: ''
       },
       {
-         img: KauaImg, 
+         img: KauaImg,
          nome: 'Kauã Almeida',
          rm: 'RM552618',
          link: ''
       },
-   ];
+   ]
 
    return (
-      <section className={classes.sectionWrapper}>
-         <h1>Conheça nossa equipe</h1> 
-         <div className={classes.sectionContentWrapper}>
-               <ul>
-                  {equipe.map((membro) => ( 
-                     <li className={classes.listItemWrapper}>
-                        <Image src={membro.img} alt={membro.nome} />
-                        <div>
-                           <p>{membro.nome} - {membro.rm}</p>
-                           <a href={membro.link} target='_blank'>Linkedin</a>
-                        </div>
-                     </li>
-                  ))}
-               </ul>
-            </div>
-               <Image src={camping} alt='' aria-hidden='true'/>
+      <section className={ classes.sectionWrapper } aria-labelledby="equipe-title">
+         <h1 id="equipe-title">Conheça nossa equipe</h1>
+         <div className={ classes.sectionContentWrapper }>
+            <ul>
+               { equipe.map((membro, index) => (
+                  <li key={ index } className={ classes.listItemWrapper }>
+                     <Image src={ membro.img } alt={ `Foto de ${ membro.nome }` } />
+                     <div>
+                        <p>{ membro.nome } - { membro.rm }</p>
+                        { membro.link ? (
+                           <a href={ membro.link } target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        ) : (
+                           <span>LinkedIn</span>
+                        ) }
+                     </div>
+                  </li>
+               )) }
+            </ul>
+         </div>
+         <Image src={ camping } alt="Illustration of a campfire" aria-hidden="true" />
       </section>
-   );
-};
+   )
+}
 
-export default MainContentEquipe;
+export default MainContentEquipe
