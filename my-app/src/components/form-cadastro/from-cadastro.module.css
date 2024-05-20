@@ -43,17 +43,9 @@
 
 .formWrapperItem {
    min-width: 45%;
-   
-   
-   
 }
-.formWrapperItem > input{
-   border: 1px solid var(--blue);
-   border-radius: 5px;
-   
-   padding: 0.5rem;
-}
-.formWrapperItemColumn > select {
+
+.formWrapperItem > input, .formWrapperItemColumn > select {
    border: 1px solid var(--blue);
    border-radius: 5px;
    
@@ -83,13 +75,17 @@
 }
 
 /* Mobile Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1070px) {
    .cadastroSectionWrapper {
       width: 100%;
-      padding: 2rem;
+      padding: 1rem;
    }
 
-   .formWrapperItem {
-      min-width: 100%;
+   .formWrapperItem{
+      width: 100%;
+   }
+   .formWrapperItemRow {
+      flex-direction: column;
+      flex-wrap: nowrap;
    }
 }
