@@ -2,9 +2,11 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   width: 95vw;
+   gap: 1rem;
+
    height: 100px;
    margin: 0 auto;
+   padding: .5rem;
 }
 
 .WrapperLogoImg {
@@ -34,7 +36,7 @@
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1070px) {
    .wrapperHeader {
       flex-direction: column;
       height: auto;
@@ -51,5 +53,13 @@
    .wrapperListLink {
       flex-direction: column;
       gap: 0.5rem;
+   }
+   
+   .logoImg {
+      width: 80px;
+   }
+   
+   .navigationImage {
+      width: 20px;
    }
 }
