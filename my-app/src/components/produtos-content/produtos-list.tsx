@@ -1,6 +1,6 @@
 'use client'
 
-// import Image from 'next/image'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import classes from './produtos-list.module.css'
 
@@ -9,6 +9,7 @@ interface Product {
    name: string
    description: string
    category: string
+   img: string
 }
 
 const ProdutosLista = () => {
@@ -24,7 +25,8 @@ const ProdutosLista = () => {
                id: item.id_servico,
                name: item.nome,
                description: item.descricao,
-               category: item.categoria
+               category: item.categoria,
+               img: item.img_url
             }))
             setData(transformedData)
             console.log('Data fetched:', transformedData)
@@ -41,15 +43,15 @@ const ProdutosLista = () => {
       <ul className={ classes.listWrapper }>
          { data.map((item: Product) => (
             <li key={ item.id }>
-               {/* <div>
+               <div role="presentation">
                   <Image
-                     src={ item.src }
+                     src={ item.img }
                      alt={ item.description }
                      priority
                      width={ 100 }
                      height={ 100 }
                   />
-               </div> */}
+               </div>
                <p>{ item.name }</p>
             </li>
          )) }
