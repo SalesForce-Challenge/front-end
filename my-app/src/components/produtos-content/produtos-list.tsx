@@ -1,45 +1,61 @@
 'use client'
-import Image from 'next/image'
+
+// import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import classes from './produtos-list.module.css'
 
 interface Product {
-   id : number
-   name: string;
-   src: string;
+   id: number
+   name: string
+   description: string
+   category: string
 }
 
-const ProtudosLista = () => {
-   const [data, setData] = useState([]);
+const ProdutosLista = () => {
+   const [data, setData] = useState<Product[]>([])
 
    useEffect(() => {
       const fetchData = async () => {
-         const res = await fetch('/data.json')
-         const jsonData = await res.json()
-         setData(jsonData)
+         try {
+            const apiUrl = 'https://challengesalesforce-production.up.railway.app/servicos'
+            const res = await fetch(apiUrl)
+            const jsonData = await res.json()
+            const transformedData = jsonData.map((item: any) => ({
+               id: item.id_servico,
+               name: item.nome,
+               description: item.descricao,
+               category: item.categoria
+            }))
+            setData(transformedData)
+            console.log('Data fetched:', transformedData)
+         } catch (error) {
+            console.error('Error fetching data:', error)
          }
-   
-         fetchData()
-      }, [])
-   
+      }
 
-      return (
-         <ul className={classes.listWrapper}>
-            {data.map((item: Product) => (
-               <li key={item.id}>
-                  <div>
-                     <Image src={item.src} alt={item.name} 
+      fetchData()
+   }, [])
+
+
+   return (
+      <ul className={ classes.listWrapper }>
+         { data.map((item: Product) => (
+            <li key={ item.id }>
+               {/* <div>
+                  <Image
+                     src={ item.src }
+                     alt={ item.description }
                      priority
-                     width={100}
-                     height={100}
-                     />
-                  </div>
+                     width={ 100 }
+                     height={ 100 }
+                  />
+               </div> */}
+               <p>{ item.name }</p>
+               <p>{ item.description }</p>
+            </li>
+         )) }
+      </ul>
+   )
+}
 
-                  <p>{item.name}</p>
-               </li>
-            ))}
-         </ul>
-      )
-   };
-   
-export default ProtudosLista;
+export default ProdutosLista
