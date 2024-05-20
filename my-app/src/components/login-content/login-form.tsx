@@ -12,8 +12,8 @@ const LoginForm: React.FC = () => {
       event.preventDefault()
 
       const data = {
-         email,
-         password
+         email: email,
+         senha: password
       }
 
       try {
@@ -27,7 +27,7 @@ const LoginForm: React.FC = () => {
          })
 
          if (response.ok) {
-            // Handle successful response
+            // Handle successful responses
             console.log('Login successful')
          } else {
             // Handle error response
@@ -46,12 +46,12 @@ const LoginForm: React.FC = () => {
             <h2 id="loginHeading">Login</h2>
             <div>
                <label htmlFor="email">E-mail:</label>
-               <input type="email" id="email" placeholder="Digite seu e-mail" value={ email } onChange={ (e) => setEmail(e.target.value) } />
+               <input type="email" id="email" placeholder="Digite seu e-mail" value={ email } onChange={ (e) => setEmail(e.target.value) } required />
             </div>
 
             <div>
                <label htmlFor="password">Senha:</label>
-               <input type="password" id="password" placeholder="Digite sua senha" value={ password } onChange={ (e) => setPassword(e.target.value) } />
+               <input type="password" id="password" placeholder="Digite sua senha" value={ password } onChange={ (e) => setPassword(e.target.value) } required />
             </div>
 
             <div>
