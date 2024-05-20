@@ -1,0 +1,19 @@
+.mainBody {
+   background-color: var(--dark-blue);
+   min-height: 100vh;
+}
+
+.mainWrapper {
+   padding: 2rem;
+   display: flex;
+   gap: 2rem;
+   justify-content: center;
+   align-items: center;
+}
+
+@media (max-width: 768px) {
+   .mainWrapper {
+      flex-direction: column;
+   }
+}
+

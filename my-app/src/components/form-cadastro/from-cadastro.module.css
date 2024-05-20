@@ -1,0 +1,95 @@
+.cadastroSectionWrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 2rem;
+   
+   padding: 4rem;
+   width: 50%;
+
+   background-color: var(--white);
+   box-shadow: -16px 19px 7.3px 0px #00000040;
+   border-radius: 20px;
+}
+
+.cadastroSectionWrapper > h2 {
+   font-size: 2rem;
+   font-weight: 800;
+   color: var(--blue);
+
+   display: flex;
+   flex-direction: column;
+}
+
+.formWrapper{
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.formWrapperItemRow {
+   display: flex;
+   gap: 1rem;
+   flex-direction: row;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.formWrapperItemColumn, .formWrapperItem{
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.formWrapperItem {
+   min-width: 45%;
+   
+   
+   
+}
+.formWrapperItem > input{
+   border: 1px solid var(--blue);
+   border-radius: 5px;
+   
+   padding: 0.5rem;
+}
+.formWrapperItemColumn > select {
+   border: 1px solid var(--blue);
+   border-radius: 5px;
+   
+   padding: 0.5rem;
+}
+
+.formWrapperItem > input::placeholder{
+   color: var(--blue);
+   text-transform: uppercase;
+}
+
+.buttonSubmitWrapper > button{
+   background-color: var(--blue);
+   color: white;
+   border: none;
+
+   padding: 0.5rem;
+   width: 100%;
+   font-weight: 800;
+   text-transform: uppercase;
+
+   transition: all 0.1s ease-in-out;
+}
+
+.buttonSubmitWrapper > button:hover {
+   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.648);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+   .cadastroSectionWrapper {
+      width: 100%;
+      padding: 2rem;
+   }
+
+   .formWrapperItem {
+      min-width: 100%;
+   }
+}
