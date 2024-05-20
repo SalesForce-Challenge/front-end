@@ -51,7 +51,6 @@ const ProdutosLista = () => {
                   />
                </div> */}
                <p>{ item.name }</p>
-               <p>{ item.description }</p>
             </li>
          )) }
       </ul>
