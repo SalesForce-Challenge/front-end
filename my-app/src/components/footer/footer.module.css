@@ -10,7 +10,7 @@
    padding: 2rem;
 }
 
-.logoWrapper{
+.logoWrapper {
    text-align: center;
 }
 
@@ -18,18 +18,18 @@
    width: 200px;
 }
 
-.footerLinksWrapper{
+.footerLinksWrapper {
    display: flex; 
    gap: 2rem;
 }
 
-.collumWrapper, .collumItemWrapper{
+.columnWrapper, .columnItemWrapper {
    display: flex;
    gap: 1rem;
    flex-direction: column;
 }
 
-.collumWrapper > h4 {
+.columnWrapper > h4 {
    font-size: 1rem;
 }
 
@@ -48,11 +48,11 @@
       flex-direction: column;
    }
 
-   .collumWrapper, .collumItemWrapper {
+   .columnWrapper, .columnItemWrapper {
       gap: 0.5rem;
    }
 
-   .collumWrapper > h4 {
+   .columnWrapper > h4 {
       font-size: 0.8rem;
    }
 }
