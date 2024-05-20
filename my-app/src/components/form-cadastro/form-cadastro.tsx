@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const FormCadastro: React.FC = () => {
    const [nome, setNome] = useState('')
@@ -10,9 +10,24 @@ const FormCadastro: React.FC = () => {
    const [funcionarios, setFuncionarios] = useState('')
    const [pais, setPais] = useState('')
    const [aceitaTermos, setAceitaTermos] = useState(false)
-   const [aceitaMarketing, setAceitaMarketing] = useState(false)
    const [response, setResponse] = useState('')
    const [senha, setSenha] = useState('')
+   const [paises, setPaises] = useState([])
+   useEffect(() => {
+      const fetchData = async () => {
+         try {
+            const response = await fetch('https://664a9139a300e8795d4249d4.mockapi.io/paises')
+            const data = await response.json()
+            console.log(data)
+            setPaises(data)
+         } catch (error) {
+            console.error('Error:', error)
+         }
+      }
+
+      fetchData()
+   }, [])
+
 
    const handleSubmit = async (event: React.FormEvent) => {
       event.preventDefault()
@@ -44,6 +59,7 @@ const FormCadastro: React.FC = () => {
                'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
+
          })
 
          const responseData = await response.json()
@@ -52,6 +68,7 @@ const FormCadastro: React.FC = () => {
 
       } catch (error) {
          console.error('Error:', error)
+         console.log(data)
          console.log(response)
       }
    }
@@ -98,36 +115,29 @@ const FormCadastro: React.FC = () => {
             <div>
                <label htmlFor="funcionarios">Media de Funcionários:</label>
                <select id="funcionarios" value={ funcionarios } onChange={ (event) => setFuncionarios(event.target.value) }>
-                  <option value="option1">Opção 1</option>
-                  <option value="option2">Opção 2</option>
-                  <option value="option3">Opção 3</option>
-                  <option value="option4">Opção 4</option>
+                  <option value="option1">1 a 50 funcionários</option>
+                  <option value="option2">51 a 300 funcionários</option>
+                  <option value="option3">301 a 1000 funcionários</option>
+                  <option value="option4">1001 a 2000 funcionários</option>
+                  <option value="option4">2001 + funcionários</option>
                </select>
             </div>
 
             <div>
-               <label htmlFor="oais">País</label>
-               <select id="oais" value={ pais } onChange={ (event) => setPais(event.target.value) }>
-                  <option value="option1">Opção 1</option>
-                  <option value="option2">Opção 2</option>
-                  <option value="option3">Opção 3</option>
-                  <option value="option4">Opção 4</option>
+               <label htmlFor="pais">País</label>
+               <select id="pais" value={ pais } onChange={ (event) => setPais(event.target.value) }>
+                  { paises.map((pais: any) => (
+                     <option key={ pais.id } value={ pais.nome }>{ pais.nome }</option>
+                  )) }
                </select>
             </div>
 
-            <div>
-               <label>
-                  <input type="checkbox" checked={ aceitaTermos } onChange={ (event) => setAceitaTermos(event.target.checked) } />
-                  Estou de acordo com o Main Services Agreement
-               </label>
-            </div>
 
-            <div>
-               <label>
-                  <input type="checkbox" checked={ aceitaMarketing } onChange={ (event) => setAceitaMarketing(event.target.checked) } />
-                  Aceito receber comunicações de marketing da Salesforce
-               </label>
-            </div>
+            <label>
+               <input type="checkbox" checked={ aceitaTermos } onChange={ (event) => setAceitaTermos(event.target.checked) } />
+               Sim, eu aceito receber comunicações de marketing, sobre a família de produtos, serviços e eventos da companhia Salesforce. Eu posso me descadastrar a qualquer momento.
+            </label>
+
 
             <div>
                <button type="submit">Criar conta</button>
