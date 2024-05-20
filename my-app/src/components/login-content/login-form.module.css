@@ -1,39 +1,40 @@
-.sectionFromWrapper {
+.sectionFormWrapper {
    display: flex;
    flex-direction: column;
+   gap: 60px;
+   align-items: center;
    width: 50rem;
    padding: 3rem 8rem;
-   gap: 60px;
    border-radius: 1rem;
    background-color: #EAF5FE;
    box-shadow: -16px 19px 7.300000190734863px 0px #00000040;
    height: 80%;
 }
 
-.sectionFromWrapper > img {
+.sectionFormWrapper > img {
    margin: 0 auto;
    width: 200px;
 }
 
-.sectionFromWrapper > form {
+.sectionFormWrapper > form {
    display: flex;
    flex-direction: column;
    gap: 1rem;
 }
 
-.sectionFromWrapper > form > input {
+.sectionFormWrapper > form > input {
    border: 2px solid var(--blue);
    padding: .5rem;
    border-radius: 5px;
    text-transform: uppercase;
 }
 
-.sectionFromWrapper > form > input::placeholder {
+.sectionFormWrapper > form > input::placeholder {
    color: var(--blue);
    text-transform: uppercase;
 }
 
-.sectionFromWrapper > form > label {
+.sectionFormWrapper > form > label {
    font-size: 1rem;
    font-weight: 600;
    color: var(--dark-blue);
@@ -48,6 +49,12 @@
 
 .wrapperFromLinks > span > input {
    margin-right: 0.3rem;
+}
+.formLinksWrapper {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   gap: 1rem;
 }
 
 .buttonSelected {
@@ -67,7 +74,7 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-   .sectionFromWrapper {
+   .sectionFormWrapper {
       width: 100%;
       padding: 2rem;
    }
@@ -80,11 +87,11 @@
       font-size: 0.6rem;
    }
 
-   .sectionFromWrapper > img {
+   .sectionFormWrapper > img {
       width: 150px;
    }
    
-   .sectionFromWrapper > form {
+   .sectionFormWrapper > form {
       gap: 0.5rem;
    }
    
